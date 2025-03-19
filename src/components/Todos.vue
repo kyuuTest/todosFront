@@ -2,7 +2,7 @@
     <div>
         <h1>Todo List</h1>
         <ul>
-            <li v-for="todo in todos" :key="todo.id">{{ todo.title }}</li>
+            <li v-for="todo in todos" :key="todo.id">{{ todo.prenom }} doit faire : {{ todo.todo }} | {{ todo.date }}</li>
         </ul>
     </div>
 </template>
@@ -22,7 +22,11 @@ export default {
             try {
                 const response = await fetch('https://nginx.reiner.ovh/api/todos');
                 const data = await response.json();
+                console.log(data);
                 this.todos = data;
+                for (let i = 0; i < this.todos.length; i++) {
+                    console.log(this.todos[i].prenom);
+                }
             } catch (error) {
                 console.log("salut");x
                 console.error('Error fetching todos:', error);
