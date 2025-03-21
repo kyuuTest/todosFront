@@ -22,7 +22,7 @@ export default {
   methods: {
     async fetchTodos() {
       try {
-        const response = await fetch("http://localhost:3000/api/todos");
+        const response = await fetch("https://nginx.reiner.ovh/api/todos");
         console.log(response);
         const data = await response.json();
         console.log(data);
