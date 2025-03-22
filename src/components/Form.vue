@@ -12,6 +12,7 @@
 </template>
 
 <script>
+const API_URL = import.meta.env.VITE_API_URL;
 export default {
   data() {
     return {
@@ -22,7 +23,7 @@ export default {
   methods: {
     async submitTodo() {
       try {
-        const response = await fetch("https://nginx.reiner.ovh/api/todos", {
+        const response = await fetch(API_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
