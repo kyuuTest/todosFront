@@ -23,7 +23,7 @@ export default {
   methods: {
     async fetchTodos() {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch(API_URL + "/todos");
         console.log(response);
         const data = await response.json();
         console.log(data);

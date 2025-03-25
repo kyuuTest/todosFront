@@ -23,7 +23,7 @@ export default {
   methods: {
     async submitTodo() {
       try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(API_URL + "/todos", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
